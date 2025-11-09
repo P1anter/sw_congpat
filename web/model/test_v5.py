@@ -1,3 +1,4 @@
+#main.py와 frontend로 나누기전 예측모델 테스트용 gradio이용 사이트
 # app_gradio_subject_predict.py
 # -*- coding: utf-8 -*-
 """
@@ -15,9 +16,10 @@ import pandas as pd
 from torch.utils.data import DataLoader, Subset
 
 # --- 프로젝트 내부 모듈 ---
-from utils.predictor.p_dataloader_5_3 import (
+from p_dataloader_5_3 import (
     HadmTableDatasetV3, collate_hadm_batch_v3, example_sources_config_v3
 )
+
 from architectures.predictor.predict_modelv2 import TableTransformerPredictor
 
 
@@ -339,4 +341,4 @@ with gr.Blocks(title="UTI 환자 조회 & 퇴원일 예측") as demo:
     )
 
 if __name__ == "__main__":
-    demo.launch(server_name="0.0.0.0", server_port=7861)
+    demo.launch(server_name="127.0.0.1", server_port=7861)

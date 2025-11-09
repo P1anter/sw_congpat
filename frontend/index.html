@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTI 환자 조회 & 퇴원일 예측</title>
+    <link rel="stylesheet" href="/static/style.css?v=1.1">
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <div class="box patient-search">
+                <h3 class="box-title">환자 검색 기능 <span class="subtitle">환자번호 검색</span></h3>
+                <input type="text" id="subject-id-input" placeholder="subject_id (예: 10000232)">
+                <button id="search-btn" class="main-button">🔎 환자 조회</button>
+            </div>
+
+            <div class="box patient-info">
+                <h4 class="box-title">환자 기본 정보</h4>
+                <div id="patient-data">
+                    <p><span class="key">환자 번호:</span> <span id="info-subject-id">---</span></p>
+                    <p><span class="key">성별:</span> <span id="info-gender">---</span></p>
+                    <p><span class="key">나이:</span> <span id="info-age">---</span></p>
+                    <p><span class="key">출생년도:</span> <span id="info-year">---</span></p>
+                    <p><span class="key">사망날짜:</span> <span id="info-dod">---</span></p>
+                </div>
+            </div>
+
+            <div class="box patient-tests">
+    <h4 class="box-title">환자 검사 결과</h4>
+    <div class="test-results-scroll-wrapper"> 
+        <div id="test-results-area">
+            <p class="guide-text">환자 조회 시 검사 기록을 가져옵니다.</p>
+        </div>
+    </div>
+</div>
+            
+            <div class="box predict-controls">
+                <button id="predict-btn" class="main-button">퇴원일 예측 버튼</button>
+                <div class="prediction-summary">
+                    <h5 class="box-title">환자 예상 퇴원일</h5>
+                    <p id="pred-dischtime-display">---</p>
+                </div>
+                <p id="predict-status-output" class="status-message"></p>
+            </div>
+        </div>
+
+        <div class="right-panel">
+            <div class="box patient-group">
+                <h4 class="box-title">동일한 환자군 리스트</h4>
+                <h2 class="placeholder">추후 개발 예정</h2>
+            </div>
+
+            <div class="box patient-meds">
+                <h4 class="box-title">환자에게 맞는 약물</h4>
+                <h2 class="placeholder">추후 개발 예정</h2>
+            </div>
+
+            <div class="box patient-results">
+                <h4 class="box-title">환자 퇴원일</h4>
+                <div id="prediction-details">
+                    <p class="guide-text">조회 후 퇴원일 예측 버튼을 눌러주세요.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/script.js?v=1.1"></script>
+</body>
+</html>

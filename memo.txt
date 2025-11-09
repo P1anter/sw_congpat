@@ -1,0 +1,11 @@
+subject_id : 
+15084163 (test값)
+10373406
+실행
+python test_v5.py
+
+sw로 이동해서
+uvicorn web.model.main:app --reload --host 127.0.0.1 --port 8000
+
+cd C:\...경로...\sw\web\model\
+uvicorn main:app --reload --host 127.0.0.1 --port 8000

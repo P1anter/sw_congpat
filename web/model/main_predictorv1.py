@@ -9,13 +9,13 @@ import json
 import torch
 from torch.utils.data import DataLoader, random_split
 
-from utils.predictor.p_dataloader_5_3 import (
+from web.model.p_dataloader_5_3 import (
     HadmTableDatasetV3, collate_hadm_batch_v3, example_sources_config_v3
 )
 from architectures.predictor.predict_modelv2 import TableTransformerPredictor
 from utils.predictor.p_train import train, resolve_device, set_seed
 # ⬇️ 새 라벨러 임포트
-from utils.predictor.p_30readmit_label_maker import label_unified_with_admissions
+# from utils.predictor.p_30readmit_label_maker import label_unified_with_admissions
 
 # --------------------------
 # 0) 경로 & 설정 (여기만 수정)

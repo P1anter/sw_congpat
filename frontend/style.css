@@ -1,0 +1,139 @@
+/* 기본 스타일 (Req 4: 하늘색/파란색 계열) */
+body { 
+    font-family: sans-serif; 
+    background-color: #f0f8ff; /* AliceBlue (매우 연한 하늘색) */
+    margin: 20px; 
+}
+.container {
+    display: flex;
+    max-width: 1000px;
+    margin: auto;
+    gap: 20px;
+}
+.left-panel, .right-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex: 1; 
+}
+
+/* 박스 스타일 (Req 4: 흰색 배경) */
+.box {
+    background-color: #ffffff; /* 흰색 배경 */
+    border-radius: 8px;
+    padding: 15px;
+    border: 1px solid #cce5ff; /* 연한 파란색 테두리 */
+    box-shadow: 0 1px 3px rgba(0,123,255,0.05); /* 연한 파란색 그림자 */
+}
+.box-title { 
+    margin-top: 0; 
+    font-weight: bold; 
+    font-size: 1.1em;
+    color: #0056b3; /* 진한 파란색 계열 */
+}
+.subtitle {
+    font-weight: normal;
+    font-size: 0.8em;
+    color: #555;
+    margin-left: 5px;
+}
+
+/* 추후 개발 예정 Placeholder (Req 4: 파란색 계열) */
+.placeholder {
+    font-size: 1.8em;
+    color: #a0c4e8; /* 연한 파란색 */
+    text-align: center;
+    padding: 30px 0;
+    margin: 0;
+}
+
+/* 버튼 및 입력 (Req 4: 파란색 계열) */
+input[type="text"] { 
+    width: calc(100% - 22px); 
+    padding: 10px; 
+    margin-bottom: 10px; 
+    border: 1px solid #bde0ff; /* 연한 파란색 */
+    border-radius: 4px; 
+}
+.main-button { 
+    background-color: #007bff; /* 메인 파란색 */
+    color: white; 
+    border: none; 
+    padding: 10px 15px; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    width: 100%; 
+    font-weight: bold; 
+}
+.main-button:hover { 
+    background-color: #0056b3; /* 더 진한 파란색 */
+}
+
+/* 환자 정보 스타일 */
+.box.patient-info p { margin: 5px 0; font-size: 0.9em; }
+.box.patient-info .key { font-weight: bold; }
+
+/* 예측 버튼 영역 (Req 3: '예상 입원기간' 요약 박스 삭제에 따른 레이아웃 수정) */
+.predict-controls { 
+    display: flex; 
+    flex-wrap: wrap; 
+    align-items: center; 
+    justify-content: space-between; 
+    gap: 10px; 
+}
+.predict-controls button { 
+    width: 100%; 
+    margin-bottom: 10px;
+}
+.prediction-summary { 
+    /* 예상 입원기간 박스 삭제로 인해 100% 너비 차지 */
+    width: 100%; 
+    background-color: #f8f9fa; 
+    padding: 10px; 
+    border-radius: 4px;
+    text-align: center;
+    flex-grow: 1; 
+}
+.prediction-summary .box-title { font-size: 0.9em; }
+#pred-dischtime-display { 
+    font-weight: bold; 
+    color: #007bff; 
+    font-size: 1.2em; 
+    margin: 0; 
+}
+.status-message { font-size: 0.9em; margin-top: 10px; color: #0056b3; width: 100%; }
+
+/* 예측 결과 테이블 스타일 (Req 4: 파란색 계열) */
+#prediction-details table { width: 100%; border-collapse: collapse; font-size: 0.85em; margin-top: 10px;}
+#prediction-details th, #prediction-details td { border: 1px solid #cce5ff; padding: 8px; text-align: center; }
+#prediction-details th { background-color: #bde0ff; /* 연한 파란색 헤더 */ }
+.guide-text { text-align: center; color: #777; padding: 20px; }
+
+/* 환자 검사 결과 테이블 스타일 */
+/* 4. 세로로 길게 출력되므로 5개만 보이도록 스크롤 기능 추가 */
+.test-results-scroll-wrapper {
+    /* 테이블 행 5개 + 헤더 높이 기준으로 약 200px 설정 */
+    max-height: 200px; 
+    overflow-y: auto; /* 세로 스크롤 활성화 */
+    border: 1px solid #eee; /* 스크롤 영역 구분선 */
+    border-radius: 4px;
+}
+
+/* 환자 검사 결과 테이블 스타일 재정의 (폰트 크기 조정) */
+#test-results-area table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    font-size: 0.9em; /* 가독성을 위해 크기 조정 */
+    margin: 0; /* 부모 컨테이너에 맞춰 마진 제거 */
+}
+/* 스크롤 시 헤더가 고정되지 않도록, 테이블 바깥 테두리만 남기고 내부 테두리 조정 */
+#test-results-area th, #test-results-area td { 
+    border: 1px solid #cce5ff; 
+    padding: 6px 4px; /* 패딩 조정 */
+    text-align: center; 
+}
+#test-results-area th { 
+    background-color: #bde0ff; 
+    font-weight: bold;
+    /* 스크롤 시 헤더 고정하려면 position: sticky를 사용해야 하지만, 래퍼 복잡도를 줄이기 위해 생략 */
+}
